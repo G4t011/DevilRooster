@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/rooster3png.png">
+    <title>Devil Rooster House</title>
+    <link rel="stylesheet" href="css/normalize.css"> <!-- Shift + Alt + flecha abajo duplica lineas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <a href="index.html">
+            <img class="header__logo" src="img/logo3.png" alt="logotipo">
+        </a>
+    </header>
+
+    <nav class="navegacion">
+        <a class="navegacion__enlace navegacion__enlace--activo" href="index.html">Tienda</a>
+        <a class="navegacion__enlace" href="nosotros.html">Nosotros</a>
+    </nav>
+
+    <main class="contenedor">
+        <h1>Burritos</h1>
+
+        <div class="food">
+            <img class="food__image" src="img/12.jpg" alt="imagen de producto">
+
+            <div class="specs">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum sunt natus blanditiis culpa quo quasi error dolorum porro doloribus quae, ea delectus saepe esse voluptates repellendus corrupti vero molestias alias?</p>
+
+                <form class="formulario">
+                    <select class="formulario__field">
+                        <option disabled selected> - Selecciona burrito - </option>
+                        <option>Irish Lucky</option>
+                        <option>Angry bull</option>
+                        <option>Le pig</option>
+                    </select>
+                    <input class="formulario__field" type="number" placeholder="Cantidad" min="1">
+                    <input class="formulario__submit" type="submit" value="Agregar al Carrito">
+                </form> <!-- Fin de formulario -->
+                
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p class="footer__texto">Devil Rooster house &reg. Todos los derechos reservados 2022</p>
+    </footer>
+</body>
+</html>

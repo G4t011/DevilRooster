@@ -1,0 +1,295 @@
+:root {
+    --negro: #000; /* #272716 negro aguacate */
+    --negroSoft: #0f0f0f;
+    --negroClear: #3f3f3f;
+    --rojoOsc: #6c2411;
+    --rojo: #ae0d13;
+    --mamey: #cc3f18;
+    --naranja: #db6400;
+    --rosa: #e9bb93;
+    --blanco: #fff;
+
+    --fuentePrincipal: 'Staatliches', cursive;
+}
+
+/* CONFIGURACIONES INICIALES */
+/* Agregar el snippet box sizing de paul Irish: https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;/* Linea que sirve para el traslado de pixels a rems */
+  }
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+/* GLOBALES */
+body {
+    background-color: var(--negro);
+    font-size: 1.6rem;
+    line-height: 1.5;/* interlineado */
+
+}
+
+p {
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+}
+a {
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+}
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto; /* Para centrar */
+
+}
+h1, h2, h3 {
+    text-align: center;
+    font-family: var(--fuentePrincipal);
+}
+
+h1 {
+    font-size: 4rem;
+    color: var(--rojoOsc);
+}
+h2 {
+    font-size: 3.2rem;
+    color: var(--rojoOsc);
+}
+h3 {
+    font-size: 2.4rem;   
+    color: var(--naranja);
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: center;
+}
+.header__logo {
+    margin: 3rem 0;
+    /* max-width: 50rem; */
+}
+
+/* NAVEGACION */
+.navegacion {
+    background-color: var(--negroSoft);
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;    /* Separa los elementos dentro de navegacion new way */
+}
+
+.navegacion__enlace {
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+    font-size: 3rem;
+    /* margin-right: 2rem; otra forma de separar los enlaces old mode */
+}
+/* .navegacion__enlace:last-of-type {
+    margin-right: 0;
+} */
+
+.navegacion__enlace--activo,
+.navegacion__enlace:hover,
+.producto__name {
+    background: linear-gradient(var(--rosa), var(--rojo));
+    -webkit-background-clip: text;
+    color: transparent; 
+    /* color: var(--naranja);
+    font-size: 3.2rem; */
+}
+
+/* PRODUCTOS gRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+}
+@media (min-width: 768px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* MAIN PRODUCTOS */
+
+.producto {
+    background-color: var(--negroSoft);
+    padding: 1rem;
+}   
+.producto__image {
+    width: 100%;
+}
+.producto__info {
+    text-align: center;
+}
+.producto__name {
+    font-size: 4rem;
+}
+.producto__price {
+    font-size: 2.8rem;
+}
+.producto__name,
+.producto__price {
+    font-family: var(--fuentePrincipal);
+    margin: 1rem 0;
+    line-height: 1.2;
+}
+
+/* MAIN PRODUCTOS */
+
+/* GRAFICOS */
+.grafico {
+    min-height: 30rem;/* le define el valor minimo a las imagenes graficas */
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-column: 1 / 3;
+}
+
+/* las siguientes clases posicionan en el grid a los graficos */
+.grafico--1 {
+    grid-row: 2 / 3;
+
+    background-image: url(../img/grafico1.jpg);
+}
+.grafico--2 {
+    background-image: url(../img/grafico2.jpg);
+    grid-row: 7 / 8;
+}
+
+@media (min-width: 768px) {
+    .grafico--2 {
+        grid-row: 5 / 6;
+        grid-column: 2 / 4;
+        background-image: url(../img/grafico2.jpg);
+    }    
+}
+/* END GRAFICOS */
+
+
+/* FOOTER */
+.footer {
+    background-color: var(--negroSoft);
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+.footer__texto {
+    text-align: center;
+    font-family: var(--fuentePrincipal );
+    font-size: 2.2rem;
+}
+
+/* NOSOTROS */
+
+.nosotros {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+}
+
+@media (min-width: 768px) {
+    .nosotros {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;   
+    }    
+}
+.nosotros__contenido {
+    text-align: justify;
+}
+.nosotros__image {
+    width: 100%;
+    grid-row: 1 / 2;
+}
+@media (min-width: 768px) {
+    .nosotros__image {
+        grid-column: 2 / 3;
+    }
+}
+
+/* END NOSOTROS */
+
+/* BLOQUES */
+.bloques {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+@media (min-width: 768px) {
+    .bloques {
+        grid-template-columns: repeat(4, 1fr);
+    }   
+}
+
+.bloque {
+    text-align: center;
+    height: auto;
+}
+.bloque__image {
+    width: 50%;
+}
+.bloque__title {
+    margin: 0;
+}
+
+/* FIN BLOQUES */
+
+/* Product page */
+.food__image {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .food {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }    
+}
+
+.formulario {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+.formulario__field {
+    /* border-color: var(--negroClear);
+    border-width: 1rem;
+    border-style: solid; */
+    border: 1rem solid var(--negroClear);
+    background-color: transparent;
+    color: var(--blanco);
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+    appearance: none;
+}
+.formulario__field option {
+    background-color: var(--negro);
+}
+.formulario__submit {
+    color: var(--negro);
+    background-color: var(--mamey);
+    border: none;
+    font-size: 2rem;
+    font-family: var(--fuentePrincipal);
+    padding: 2rem;
+    border-radius: 1rem;
+    transition: background-color 0.2s ease;
+    grid-column: 1 / 3;
+}
+.formulario__submit:hover {
+    color: var(--blanco);
+    cursor: pointer;
+    background-color: var(--rojo);
+}
+
+
+/* END Product page */
